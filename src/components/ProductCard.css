@@ -1,0 +1,108 @@
+/* ===== Card sản phẩm ===== */
+.product-card {
+  position: relative; /* cần để đặt icon yêu thích */
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Ảnh sản phẩm ===== */
+.product-card .product-image {
+  display: block;
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+}
+
+.product-card .product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card .product-image img:hover {
+  transform: scale(1.07);
+}
+
+/* ===== Thông tin sản phẩm ===== */
+.product-card .product-info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-grow: 1;
+}
+
+.product-card .product-info h3 {
+  font-size: 18px;
+  color: #222;
+  font-weight: 600;
+  margin: 0;
+}
+
+.product-card .product-info .price {
+  color: #e53935;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* ===== Nút thêm giỏ hàng ===== */
+.product-card .add-btn {
+  margin-top: 8px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.product-card .add-btn:hover {
+  background: #007bff;
+  transform: scale(1.03);
+}
+
+/* ===== Nút yêu thích (chỉ trong card sản phẩm) ===== */
+.product-card .favorite-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+  border-radius: 50%;
+  padding: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  z-index: 5;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-card .favorite-btn:hover {
+  transform: scale(1.15);
+  background-color: #f8f8f8;
+}
+
+/* ===== Icon trái tim ===== */
+.product-card .heart-icon {
+  width: 22px;
+  height: 22px;
+  color: #bbb;
+  transition: all 0.3s ease;
+}
+
+.product-card .heart-icon.active {
+  color: #ff4d4d;
+  fill: #ff4d4d;
+  transform: scale(1.25);
+}
