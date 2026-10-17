@@ -1,0 +1,302 @@
+/* ===== HEADER CHUNG ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #000;
+  color: rgb(250, 250, 250);
+  padding: 12px 30px;
+  border-bottom: 2px solid #111;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* ===== LOGO ===== */
+.logo {
+  color: cyan;
+  font-weight: bold;
+  font-size: 22px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.logo:hover {
+  color: #00e6e6;
+}
+
+/* ===== NAVIGATION ===== */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav a,
+.menu-item,
+.dropdown-menu span {
+  color: rgb(207, 192, 192);
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover,
+.menu-item:hover {
+  color: cyan;
+}
+
+/* ===== ICON LINK ===== */
+.icon-link {
+  position: relative;
+  font-size: 1.3rem;
+  color: rgb(207, 192, 192);
+  margin: 0 5px;
+  transition: color 0.2s ease;
+}
+
+.icon-link:hover {
+  color: cyan;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 0.7rem;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-weight: bold;
+}
+
+/* ===== DROPDOWN CHUNG ===== */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  color: black;
+  min-width: 180px;
+  border-radius: 6px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.dropdown-menu span {
+  padding: 10px 15px;
+  transition: background 0.2s;
+}
+
+.dropdown-menu span:hover {
+  background: #497cbb;
+  color: #fff;
+}
+
+/* ===== USER DROPDOWN (TÊN KHÁCH HÀNG) ===== */
+.user-dropdown {
+  position: relative;
+}
+
+.user-name {
+  color: cyan;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.user-name:hover {
+  color: #00e6e6;
+}
+
+/* ===== USER MENU DROPDOWN ===== */
+.user-dropdown .dropdown-menu {
+  right: 0;
+  left: auto;
+  background: #111;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+.user-dropdown .dropdown-menu span {
+  padding: 10px 16px;
+  color: #ddd;
+}
+
+.user-dropdown .dropdown-menu span:hover {
+  background: #333;
+  color: cyan;
+}
+
+/* ===== ADMIN HEADER ===== */
+.admin-header {
+  background: linear-gradient(90deg, #000000, #003333);
+  color: #00ffff;
+  padding: 15px 30px;
+  border-bottom: 3px solid #00ffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-header-left {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.admin-header-nav button {
+  background: transparent;
+  border: none;
+  color: #00ffff;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 15px;
+  transition: all 0.2s ease;
+}
+
+.admin-header-nav button:hover,
+.admin-header-nav button.active {
+  color: #fff;
+  border-bottom: 2px solid #00ffff;
+}
+
+.logout-btn {
+  background: #00ffff;
+  color: #000;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #00cccc;
+  transform: scale(1.05);
+}
+
+/* ===== RESPONSIVE (Mobile, Tablet) ===== */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 20px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+
+  .icon-link {
+    font-size: 1.4rem;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .cart-badge {
+    top: -4px;
+    right: -8px;
+  }
+}
+/* DARK MODE BUTTON */
+.dark-toggle {
+  margin-left: 10px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #111;
+  color: white;
+  font-size: 14px;
+}
+
+.dark-toggle:hover {
+  opacity: 0.8;
+}
+
+/* DARK MODE GLOBAL */
+body.dark {
+  background: #111827;
+  color: #f9fafb;
+}
+
+/* HEADER */
+body.dark .header,
+body.dark .admin-header {
+  background: #1f2937;
+  color: white;
+}
+
+/* NAV */
+body.dark .nav a,
+body.dark .menu-item {
+  color: #e5e7eb;
+}
+
+/* DROPDOWN */
+body.dark .dropdown-menu {
+  background: #1f2937;
+  border: 1px solid #374151;
+}
+
+/* ICON */
+body.dark .icon-link {
+  color: white;
+}
+
+/* BUTTON */
+body.dark .logout-btn {
+  background: #ef4444;
+}
+/* SWITCH */
+.theme-switch {
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.switch {
+  width: 50px;
+  height: 26px;
+  background: #ddd;
+  border-radius: 20px;
+  position: relative;
+  transition: 0.3s;
+}
+
+.switch .circle {
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: 0.3s;
+}
+
+/* ACTIVE */
+.switch.active {
+  background: #4f46e5;
+}
+
+.switch.active .circle {
+  transform: translateX(24px);
+}
